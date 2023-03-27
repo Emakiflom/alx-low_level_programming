@@ -1,0 +1,1 @@
+alx projectt got pointers and array
