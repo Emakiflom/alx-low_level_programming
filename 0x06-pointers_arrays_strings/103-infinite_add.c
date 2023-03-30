@@ -1,47 +1,27 @@
 #include "main.h"
 
 /**
- * infinite_add - adds two numbers
- * @n1: first number
- * @n2: second number
- * @r: buffer for result
- * @size_r: buffer size
- * ahhh! Crazy task! Expand your knowledge
- * Return: address of r or 0
+ * rot13 - encodes a string in rot13
+ * @s: string to be encoded
+ * Return: the resulting strring
  */
-char *infinite_add(char *n1, char *n2, char *r, int size_r)
+char *rot13(char *s)
 {
-	int i, j, k, l, m, n;
+	int i, j;
 
-	for (i = 0; n1[i]; i++)
-		;
-	for (j = 0; n2[j]; j++)
-		;
-	if (i > size_r || j > size_r)
-		return (0);
-	m = 0;
-	for (i -= 1, j -= 1, k = 0; k < size_r - 1; i--, j--, k++)
+	char a[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+	char b[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
+
+	for (i = 0; s[i] != '\0'; i++)
 	{
-		n = m;
-		if (i >= 0)
-			n += n1[i] - '0';
-		if (j >= 0)
-			n += n2[j] - '0';
-		if (i < 0 && j < 0 && n == 0)
+		for (j = 0; a[j] != '\0'; j++)
 		{
-			break;
-		}
-		m = n / 10;
-		r[k] = n % 10 + '0';
+			if (s[i] == a[j])
+			{
+				s[i] = b[j];
+				break;
+			}
+	    }
 	}
-	r[k] = '\0';
-	if (i >= 0 || j >= 0 || m)
-		return (0);
-	for (k -= 1, l = 0; l < k; k--, l++)
-	{
-		m = r[k];
-		r[k] = r[l];
-		r[l] = m;
-	}
-	return (r);
+	return (s);
 }
