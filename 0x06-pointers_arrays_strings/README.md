@@ -1,0 +1,1 @@
+this is alx project  for pointers and array
