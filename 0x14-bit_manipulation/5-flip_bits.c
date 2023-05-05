@@ -1,9 +1,9 @@
 #include "main.h"
 
 /**
- * flip_bits - A function that number of bits you would need to flip.
+ * flip_bits - Afunction that number of bits you would need to flip.
  * @n: decimal  number that cames from parameter.
- * @index: index number.
+ * @m: unsigned lonf int number.
  * Return: n_flips returns.
  */
 
