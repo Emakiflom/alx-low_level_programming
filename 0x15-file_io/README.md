@@ -1,1 +1,1 @@
-rhis is mya alx project of file input output
+this is alx project for file io input and output
